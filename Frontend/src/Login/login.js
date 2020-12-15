@@ -3,15 +3,9 @@ import { Link } from 'react-router-dom';
 import './static/style.css'
 import signinImg from './img/signin.jpg'
 import logo from './img/logo.png'
+import LoginForm from './forms/loginform.js'
 
 export default class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.emailInput = React.createRef();
-        this.signInBtn = React.createRef();
-    }
-
-   
     render() {
         return (
             <div>
@@ -29,18 +23,8 @@ export default class Login extends Component {
                                             <p>RMITify</p>
                                         </div>
                                         <p className="login-card-description">Sign into your account</p>
-            
-                                        <form action="">
-                                            <div className="form-group">
-                                                <label for="email" className="sr-only">Email</label>
-                                                <input type="email" name="email" id="email" className="form-control" placeholder="Email address" ref={this.emailInput}></input>
-                                            </div>
-                                            <div className="form-group mb-4">
-                                                <label for="password" className="sr-only">Password</label>
-                                                <input type="password" name="password" id="password" className="form-control" placeholder="Password"></input>
-                                            </div>
-                                            <input name="login" id="login" className="btn btn-block login-btn mb-4 hvr-grow" type="button" value="Login" ref={this.signInBtn}></input>
-                                        </form>
+                                        <LoginForm/>
+                                        
                                         <Link to='/forgotpassword'><a href="#" className="forgot-password-link">Forgot password?</a></Link>
                                         <p className="or-social-platforms"> Or use social platforms</p>
                                         <button className="btn btn-block mb-4 google-sign-in hvr-grow">
