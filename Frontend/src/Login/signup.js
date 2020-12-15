@@ -1,7 +1,9 @@
 import React, { useState, useEffect, Component } from 'react'
+import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import './static/style.css'
 import signupImg from './img/signup.jpg'
+
 
 
 const options = [
@@ -103,8 +105,10 @@ export default class Signup extends Component {
                                                 styles={styles}
                                                 value={selectedOption}
 				                             />
-                                            {/* <Select styles={customStyles} value={selectedOption} placeholder={<p>Select your favourite major...</p>} onChange={this.handleChange} options={options}/> */}
-                                            <input name="signup" id="signup" style={{marginTop: "80px"}}className="btn btn-block login-btn mb-4 hvr-grow" type="button" value="Signup"></input>
+                                            
+                                            <input name="signup" id="signup" style={{marginTop: "30px"}}className="btn btn-block login-btn mb-4 hvr-grow" type="button" value="Signup"></input>
+    
+                                            <Link to="/"><a href="#" className="back-to-login-text">Back to login page</a></Link>
                                         </form>
                                     </div>
                                 </div>
