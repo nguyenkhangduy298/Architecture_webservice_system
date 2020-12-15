@@ -2,10 +2,10 @@ import React, { useState, useEffect, Component } from 'react'
 import { Link } from 'react-router-dom';
 import './static/style.css'
 import fpImg from './img/forgotpassword.jpg';
-import questionImg from './img/question.jpg';
+import ForgotPasswordForm from './forms/forgotpwform.js'
 
 
-export default class Login extends Component {
+export default class ForgotPassword extends Component {
     render() {
         return (
             <div>
@@ -16,14 +16,9 @@ export default class Login extends Component {
                                 <div className="col-md-7">
                                     <div className="card-body">
                                         <p className="fp-text">Forgot your password?</p>
-                                        <p className="fp-small-text"> We understand, sometimes we are just that forgetful! Just type in your email and we will send you a request for the new password.</p>
-                                        <form action="">
-                                            <div className="form-group">
-                                                <label for="email" className="sr-only">Email</label>
-                                                <input type="email" name="email" id="email" className="form-control" placeholder="Your email address"></input>
-                                            </div>
-                                            <input name="checkmail" id="checkmail" className="btn btn-block login-btn mb-4 hvr-grow" type="button" value="Send"></input>
-                                        </form>
+                                        <p className="fp-small-text"> We understand, sometimes we are just that forgetful ! Just type in your email and we will send you a request for the new password.</p>
+                                        <ForgotPasswordForm/>
+                                        
                                         <Link to="/"><a href="#" className="back-to-login-text">Back to login page</a></Link>
                                          
                                     </div>
