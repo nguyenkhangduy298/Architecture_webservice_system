@@ -1,7 +1,8 @@
 import React, { useState, useEffect, Component } from 'react'
+import { Link } from 'react-router-dom';
 import './static/style.css'
 import signinImg from './img/signin.jpg'
-import logo from './img/logo.svg'
+import logo from './img/logo.png'
 
 export default class Login extends Component {
     constructor(props) {
@@ -24,7 +25,8 @@ export default class Login extends Component {
                                 <div className="col-md-7">
                                     <div className="card-body">
                                         <div className="brand-wrapper">
-                                            <img src={logo} alt="logo" className="logo"></img>
+                                            <img style={{display: 'inline-block'}} src={logo} alt="logo" className="logo"></img>
+                                            <p>RMITify</p>
                                         </div>
                                         <p className="login-card-description">Sign into your account</p>
             
@@ -39,7 +41,7 @@ export default class Login extends Component {
                                             </div>
                                             <input name="login" id="login" className="btn btn-block login-btn mb-4 hvr-grow" type="button" value="Login" ref={this.signInBtn}></input>
                                         </form>
-                                        <a href="#" className="forgot-password-link">Forgot password?</a>
+                                        <Link to='/forgotpassword'><a href="#" className="forgot-password-link">Forgot password?</a></Link>
                                         <p className="or-social-platforms"> Or use social platforms</p>
                                         <button className="btn btn-block mb-4 google-sign-in hvr-grow">
                                             <p className="btn darken-4 white black-text" href="#">
@@ -50,7 +52,7 @@ export default class Login extends Component {
                                                 <p>Sign-in with Google</p>
                                             </p>
                                         </button>
-                                        <p className="login-card-footer-text">Don't have an account?&nbsp; <a href="#" className="register-text">Register here</a></p> 
+                                        <p className="login-card-footer-text">Don't have an account?&nbsp; <Link to="/signup"><a href="#" className="register-text">Register here</a></Link></p> 
                                     </div>
                                 </div>
                             </div>
