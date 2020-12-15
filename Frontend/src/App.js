@@ -1,12 +1,11 @@
 import './App.css';
-import StudentComp from './StudentComp.js'
+import Login from './Login/login.js'
+import Signup from './Login/signup.js'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <StudentComp/>
-      </header>
+    <div>
+      <Login/>
     </div>
   );
 }
