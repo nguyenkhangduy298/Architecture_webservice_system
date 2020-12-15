@@ -12,6 +12,17 @@ body {
     margin-bottom: 19px; }
     .brand-wrapper .logo {
       height: 40px; }
+
+.brand-wrapper p {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 35px;
+    vertical-align: middle;
+    margin-bottom: 0rem;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-family: 'Poppins', san-serif;
+}
   
   .login-card {
     border: 0;
@@ -80,12 +91,12 @@ body {
         .login-card-footer-text {
           margin-bottom: 24px; } }
     
-    .register-text {
+    .register-text, .back-to-login-text{
         text-decoration: underline;
         color: rgb(30, 139, 248);
     }
     
-    .register-text:hover {
+    .register-text:hover, .back-to-login-text:hover{
         color: rgb(42, 111, 246);
     }
 
@@ -142,5 +153,15 @@ body {
     font-weight: 300;
     font-size: 25px;
 
+}
+
+.fp-text {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.fp-small-text {
+    font-weight: 300;
+    font-size: 15px;
 }
 
