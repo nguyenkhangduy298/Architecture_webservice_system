@@ -1,5 +1,5 @@
-import React, { useState, useEffect, Component } from 'react'
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom';
 import './static/style.css'
 import fpImg from './img/forgotpassword.jpg';
 import ForgotPasswordForm from './forms/forgotpwform.js'
@@ -7,6 +7,10 @@ import ForgotPasswordForm from './forms/forgotpwform.js'
 
 export default class ForgotPassword extends Component {
     render() {
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            return <Redirect to="/homepage" />
+        } 
+       
         return (
             <div>
                 <div className="d-flex align-items-center min-vh-100 py-3 py-md-0">
@@ -19,7 +23,7 @@ export default class ForgotPassword extends Component {
                                         <p className="fp-small-text"> We understand, sometimes we are just that forgetful ! Just type in your email and we will send you a request for the new password.</p>
                                         <ForgotPasswordForm/>
                                         
-                                        <Link to="/"><a href="#" className="back-to-login-text">Back to login page</a></Link>
+                                        <a href="/login" className="back-to-login-text">Back to login page</a>
                                          
                                     </div>
                                 </div>

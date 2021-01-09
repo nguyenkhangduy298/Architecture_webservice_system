@@ -124,7 +124,13 @@ body {
 
 .google-sign-in .left {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 8px;
+    
+}
+
+.google-sign-in .left img {
+  position: relative;
+  bottom: 8px;
 }
 
 

@@ -7,15 +7,15 @@ export default function ForgotpasswordForm() {
 
     return (
         <div>
-            <form noValidate action="">
+            <form onSubmit={handleSubmit(onSubmit)} noValidate>
                 <div className="form-group">
                     <div>
-                        <label for="email" className="sr-only">Email</label>
+                        <label htmlFor="email" className="sr-only">Email</label>
                         <input  
                             style={{ border: errors.email ? '1px solid red' : '' }}
                             type="email" 
-                            name="email"
-                            id="email" 
+                            name="forgot-email"
+                            id="forgot-email" 
                             className="form-control" 
                             placeholder="Email address"
                             ref={register({ 

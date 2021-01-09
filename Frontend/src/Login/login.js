@@ -1,12 +1,21 @@
-import React, { useState, useEffect, Component } from 'react'
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
 import './static/style.css'
 import signinImg from './img/signin.jpg'
 import logo from './img/logo.png'
 import LoginForm from './forms/loginform.js'
+import { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
+    constructor(props) {
+        super(props);
+
+    }
+
     render() {
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            return <Redirect to="/homepage" />
+        }
+       
         return (
             <div>
                 <div className="d-flex align-items-center min-vh-100 py-3 py-md-0">
@@ -25,18 +34,17 @@ export default class Login extends Component {
                                         <p className="login-card-description">Sign into your account</p>
                                         <LoginForm/>
                                         
-                                        <Link to='/forgotpassword'><a href="#" className="forgot-password-link">Forgot password?</a></Link>
+                                        <a href="/forgotpassword" className="forgot-password-link">Forgot password?</a>
                                         <p className="or-social-platforms"> Or use social platforms</p>
                                         <button className="btn btn-block mb-4 google-sign-in hvr-grow">
-                                            <p className="btn darken-4 white black-text" href="#">
-                                                <div className="left">
-                                                    <img width="20px" alt="Google sign-in" 
-                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-                                                </div>
-                                                <p>Sign-in with Google</p>
-                                            </p>
+                                            <div className="left">
+                                                <img width="20px" alt="Google sign-in" 
+                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                                            </div>
+                                            <p className="btn darken-4 white black-text" > Sign-in with Google</p>
                                         </button>
-                                        <p className="login-card-footer-text">Don't have an account?&nbsp; <Link to="/signup"><a href="#" className="register-text">Register here</a></Link></p> 
+                                        <p className="login-card-footer-text">Don't have an account?&nbsp; <a href="/signup" className="register-text">Register here</a></p>
+                                        
                                     </div>
                                 </div>
                             </div>

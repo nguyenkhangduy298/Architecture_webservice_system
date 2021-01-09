@@ -1,16 +1,47 @@
 import React, { useState, useEffect, Component } from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export default function LoginForm() {
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data)
+    const { userData, setUserData } = useState('');
+    const userEndPoint = 'http://localhost:8080/user';
+    const history = useHistory();
+
+    const fetchLoginUserByEmail = (email) => {
+        fetch(userEndPoint + "/" + email)
+            .then(response => response.json())
+            .then(data => setUserData(data))
+    }
+
+    const onSubmit = data => {
+
+        // fetchLoginUserByEmail(data.email)
+        console.log(data);
+
+
+        if ((data.email === 'trandamquan36@gmail.com') && (data.password === '123456')) {
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userId', 1);
+            console.log("Login pressed: " + localStorage.getItem('isLoggedIn'));
+            
+            history.push("/");
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Bad Credentials',
+                text: 'Please check your email or password again!',
+            })
+        }
+    }
 
     return (
         <div>
             <form noValidate onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <div>
-                        <label for="email" className="sr-only">Email</label>
+                        <label htmlFor="email" className="sr-only">Email</label>
                         <input  
                             style={{ border: errors.email ? '1px solid red' : '' }}
                             type="email" 
@@ -30,7 +61,7 @@ export default function LoginForm() {
                 </div>
                 <div className="form-group mb-4">
                     <div>
-                        <label for="password" className="sr-only">Password</label>
+                        <label htmlFor="password" className="sr-only">Password</label>
                         <input 
                             style={{ border: errors.password ? '1px solid red' : '' }}
                             type="password" 

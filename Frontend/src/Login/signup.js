@@ -1,25 +1,14 @@
-import React, { useState, useEffect, Component } from 'react'
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom';
 import './static/style.css'
 import signupImg from './img/signup.jpg'
 import SignupForm from './forms/signupform.js'
 
 export default class Signup extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-
-    // state = {
-    //     selectedOption: null,
-    // };
-
-    // handleSelectChange = selectedOption => {
-    //     this.setState( {selectedOption },
-    //         () => console.log("Option selected:", this.state.selectedOption));
-    // };
-
     render() {
-        // const { selectedOption } = this.state;
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            return <Redirect to="/homepage" />
+        } 
         return (
             <div>
                 <div className="d-flex align-items-center min-vh-100 py-3 py-md-0">
@@ -31,7 +20,7 @@ export default class Signup extends Component {
                                     <div className="card-body">
                                         <p className="login-card-description">Create a new account</p>
                                         <SignupForm/>
-                                        <Link to="/"><a href="#" className="back-to-login-text">Back to login page</a></Link>
+                                        <a href="/login" className="back-to-login-text">Back to login page</a>
                                     </div>
                                 </div>
                                 <div className="col-md-5">
