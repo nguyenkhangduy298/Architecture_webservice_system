@@ -3,37 +3,40 @@ import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
+
+var bcrypt = require('bcryptjs');
+
 export default function LoginForm() {
     const { register, handleSubmit, errors } = useForm();
-    const { userData, setUserData } = useState('');
     const userEndPoint = 'http://localhost:8080/user';
     const history = useHistory();
 
-    const fetchLoginUserByEmail = (email) => {
-        fetch(userEndPoint + "/" + email)
+    const checkValidUser = (email, password ) => {
+        fetch(userEndPoint + "/email/" + email)
             .then(response => response.json())
-            .then(data => setUserData(data))
+            .then(data => {
+                if ((email === data.email) && (bcrypt.compareSync(password, data.password))) {
+                    history.push({
+                        pathname: "/homepage",
+                    });
+                    localStorage.setItem("userEmail", email);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Bad Credentials',
+                        text: 'Please check your email or password again!',
+                    })
+                }
+                
+            })
+            .catch(() => {
+                // do nothing
+            });
     }
 
-    const onSubmit = data => {
-
-        // fetchLoginUserByEmail(data.email)
-        console.log(data);
-
-
-        if ((data.email === 'trandamquan36@gmail.com') && (data.password === '123456')) {
-            localStorage.setItem('isLoggedIn', 'true');
-            localStorage.setItem('userId', 1);
-            console.log("Login pressed: " + localStorage.getItem('isLoggedIn'));
-            
-            history.push("/");
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Bad Credentials',
-                text: 'Please check your email or password again!',
-            })
-        }
+    const onSubmit = user => {
+        checkValidUser(user.email, user.password);
+        localStorage.setItem("isLoggedIn", "true");
     }
 
     return (
@@ -49,6 +52,9 @@ export default function LoginForm() {
                             id="email" 
                             className="form-control" 
                             placeholder="Email address"
+                            autoComplete="none"
+                            autoCorrect="none"
+                            autoFocus={true}
                             ref={register({ 
                                 required: true,
                                 pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

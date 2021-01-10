@@ -6,9 +6,9 @@ import SignupForm from './forms/signupform.js'
 
 export default class Signup extends Component {
     render() {
-        if (localStorage.getItem('isLoggedIn') === 'true') {
+        if (localStorage.getItem("isLoggedIn") === "true") {
             return <Redirect to="/homepage" />
-        } 
+        }
         return (
             <div>
                 <div className="d-flex align-items-center min-vh-100 py-3 py-md-0">

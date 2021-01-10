@@ -12,10 +12,11 @@ export default class Login extends Component {
     }
 
     render() {
-        if (localStorage.getItem('isLoggedIn') === 'true') {
+        console.log(localStorage.getItem("isLoggedIn"))
+        if (localStorage.getItem("isLoggedIn") === "true") {
             return <Redirect to="/homepage" />
-        }
-       
+        } else {
+        
         return (
             <div>
                 <div className="d-flex align-items-center min-vh-100 py-3 py-md-0">
@@ -54,6 +55,7 @@ export default class Login extends Component {
             </div>
         );
     }
+}
 }
 
 

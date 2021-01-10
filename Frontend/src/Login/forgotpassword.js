@@ -7,10 +7,9 @@ import ForgotPasswordForm from './forms/forgotpwform.js'
 
 export default class ForgotPassword extends Component {
     render() {
-        if (localStorage.getItem('isLoggedIn') === 'true') {
+        if (localStorage.getItem("isLoggedIn") === "true") {
             return <Redirect to="/homepage" />
-        } 
-       
+        }
         return (
             <div>
                 <div className="d-flex align-items-center min-vh-100 py-3 py-md-0">

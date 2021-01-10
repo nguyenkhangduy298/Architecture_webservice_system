@@ -31,7 +31,6 @@ export default class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          {/* {error && <AlertDismissible />} */}
           <Switch>
             <Route path={["/","/homepage","/home"]} exact component={Home} />
             <Route path="/login" exact component={Login} />

@@ -9,17 +9,20 @@ export default class Home extends Component {
     }
 
     handleLogout() {
-        localStorage.setItem('isLoggedIn', 'false');
-        localStorage.setItem('userId', null);
         this.props.history.push('/login');
-        
+        localStorage.setItem("isLoggedIn", "false");
+        localStorage.setItem("userEmail", "");
     }
     
     render() {
+        if (localStorage.getItem("isLoggedIn") === "false") {
+            return <Redirect to="/login" />
+        }
+
         return (
             <div>
                 <h1> You are in the homepage </h1>
-                <h2> Welcome, user id: {localStorage.getItem('userId')} </h2>
+                <h2> Welcome, user: {localStorage.getItem("userEmail")}  </h2>
                 <button onClick={this.handleLogout}>Logout</button>
             </div>
         );

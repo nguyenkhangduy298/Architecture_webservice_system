@@ -1,10 +1,11 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { useHistory } from 'react-router-dom';
 
 
+var bcrypt = require('bcryptjs');
 
 const options = [
     { value: 'Computer Science', label: 'Computer Science'},
@@ -56,23 +57,21 @@ const styles = {
 export default function SignupForm() {
     const userEndPoint = "http://localhost:8080/user"
     const { register, handleSubmit, watch, errors, getValues } = useForm();
-    const [ userData, setUserData ] = useState('');
     const [ favoriteSubject, setFavoriteSubject ] = useState(null);
     const history = useHistory();
 
-    console.log("Email: "+ watch("email"));
+    const saltRounds = 10;
 
-    const fetchUserByEmail = (email) => {
-        fetch(userEndPoint + "/" + email)
+
+    var emailIsUnique = async () => {
+        return fetch(userEndPoint + "/email/" + watch("email"))
             .then(response => response.json())
-            .then(data => setUserData(data))
-    }
-
-    const emailIsUnique = () => {
-        //fetchUserByEmail(email);
-        //console.log(userData);
-        
-        return watch("email") !== "trandamquan36@gmail.com";
+            .then(data => {
+                return false;
+            })
+            .catch(error => {
+                return true;
+            });
     }
 
     const createUser = (userInfo) => {
@@ -86,14 +85,11 @@ export default function SignupForm() {
     }
 
 
-
     const onSubmit = (data) => {
-        console.log(data);
-        
         if (favoriteSubject !== null) {
-            console.log("Form successfully sent");
-            //const userInfo = {name: data.name, email: data.email, password: data.password, favoriteSubject: favoriteSubject.value}
-            //createUser(userInfo)
+            const encodedPassword = bcrypt.hashSync(data.password, saltRounds);
+            const userInfo = {name: data.name, email: data.email, password: encodedPassword, favoriteSubject: favoriteSubject.value, role: 'student'}
+            createUser(userInfo);
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
@@ -131,6 +127,7 @@ export default function SignupForm() {
                             id="name" 
                             className="form-control" 
                             placeholder="Full name"
+                            autoFocus={true}
                             ref={register({ 
                                 required: true,
                                 validate: {
