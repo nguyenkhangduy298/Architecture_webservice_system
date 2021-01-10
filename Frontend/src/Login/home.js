@@ -6,12 +6,14 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
         this.handleLogout = this.handleLogout.bind(this);
+        //this.email = this.props.location.state.email !== undefined ? this.props.location.state.email : localStorage.getItem('userEmail');
+        this.email = this.props.location.state.email;
     }
 
     handleLogout() {
-        this.props.history.push('/login');
         localStorage.setItem("isLoggedIn", "false");
         localStorage.setItem("userEmail", "");
+        this.props.history.push('/login');
     }
     
     render() {
@@ -22,7 +24,7 @@ export default class Home extends Component {
         return (
             <div>
                 <h1> You are in the homepage </h1>
-                <h2> Welcome, user: {localStorage.getItem("userEmail")}  </h2>
+                <h2> Welcome, user: {this.email}  </h2>
                 <button onClick={this.handleLogout}>Logout</button>
             </div>
         );

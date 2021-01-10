@@ -14,9 +14,11 @@ export default class Login extends Component {
     render() {
         console.log(localStorage.getItem("isLoggedIn"))
         if (localStorage.getItem("isLoggedIn") === "true") {
-            return <Redirect to="/homepage" />
-        } else {
-        
+            return <Redirect to={{
+                pathname: "/homepage",
+                state: { email: localStorage.getItem("userEmail")}
+            }} />
+        } 
         return (
             <div>
                 <div className="d-flex align-items-center min-vh-100 py-3 py-md-0">
@@ -55,7 +57,6 @@ export default class Login extends Component {
             </div>
         );
     }
-}
 }
 
 

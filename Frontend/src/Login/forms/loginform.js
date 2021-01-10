@@ -18,6 +18,7 @@ export default function LoginForm() {
                 if ((email === data.email) && (bcrypt.compareSync(password, data.password))) {
                     history.push({
                         pathname: "/homepage",
+                        state: { email: email}
                     });
                     localStorage.setItem("userEmail", email);
                 } else {
