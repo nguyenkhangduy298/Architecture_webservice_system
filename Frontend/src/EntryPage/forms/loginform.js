@@ -16,13 +16,15 @@ export default function LoginForm() {
             .then(response => response.json())
             .then(data => {
                 
-                // if ((email === data.email) && (password === data.password)) {
-                if ((email === data.email) && (bcrypt.compareSync(password, data.password))) {
+                if ((email === data.email) && (password === data.password)) {
+                // if ((email === data.email) && (bcrypt.compareSync(password, data.password))) {
+                    localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("userEmail", email);
                     history.push({
                         pathname: "/homepage",
                         state: { email: email}
                     });
-                    localStorage.setItem("userEmail", email);
+                   
                 } else {
                     Swal.fire({
                         icon: 'error',
@@ -43,7 +45,6 @@ export default function LoginForm() {
 
     const onSubmit = user => {
         checkValidUser(user.email, user.password);
-        localStorage.setItem("isLoggedIn", "true");
     }
 
     return (
