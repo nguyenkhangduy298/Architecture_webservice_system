@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+    rmitify-db:
+        image: "postgres"
+        container_name: rmitify-db
+        ports:
+            # 5433 is port on comp, 543 is port of container on Docker
+            - "5434:5432"
+        environment:
+            POSTGRES_DB: rmitify
+            POSTGRES_USER: rmitify_team
+            POSTGRES_PASSWORD: rmit
+
+    rmitify-service:
+        build:
+            context: ./
+            dockerfile: Dockerfile.dev
+        container_name: rmitify-service
+        ports:
+            - "8080:8080"
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:postgresql://rmitify-db/rmitify
+            SPRING_DATASOURCE_USERNAME: rmitify_team
+            SPRING_DATASOURCE_PASSWORD: rmit
+        depends_on:
+            - rmitify-db
+          
+
+
+
+            
