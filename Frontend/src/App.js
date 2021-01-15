@@ -1,32 +1,13 @@
 import './App.css';
-import Login from './Login/login.js'
-import Signup from './Login/signup.js'
-import ForgotPassword from './Login/forgotpassword.js'
+import Login from './EntryPage/login.js'
+import Signup from './EntryPage/signup.js'
+import ForgotPassword from './EntryPage/forgotpassword.js'
 import { Component } from 'react'
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Home from './Login/home.js'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './HomePage/home.js'
 import NotFound from './Common/notfound.js'
 
-
-// const ProtectedRoute = ({component: Component, loggedIn, path, ...rest }) => {
-//   return (
-//     <Route 
-//       path={path}
-//       {...rest}
-//       render={(props) => {
-//         console.log("Home : " + loggedIn);
-//         return loggedIn === 'true' ? <Component {...props} /> :
-//          <Redirect to="/login" />;
-//       }}
-//       />
-//   );
-// };
-
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
