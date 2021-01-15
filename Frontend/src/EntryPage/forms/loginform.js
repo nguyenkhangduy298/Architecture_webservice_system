@@ -33,7 +33,11 @@ export default function LoginForm() {
                 
             })
             .catch(() => {
-                // do nothing
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Bad Credentials',
+                    text: 'Please check your email or password again!',
+                })
             });
     }
 
