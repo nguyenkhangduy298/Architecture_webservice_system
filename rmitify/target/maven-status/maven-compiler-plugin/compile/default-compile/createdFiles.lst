@@ -1,12 +1,11 @@
 com/example/rmitify/service/UserService.class
+com/example/rmitify/service/ICourseService.class
 com/example/rmitify/RmitifyApplication.class
+com/example/rmitify/service/CourseService.class
+com/example/rmitify/service/IUserService.class
 com/example/rmitify/model/User.class
 com/example/rmitify/repository/UserRepository.class
 com/example/rmitify/model/Course.class
 com/example/rmitify/repository/CourseRepository.class
 com/example/rmitify/controller/CourseController.class
-com/example/rmitify/model/AuthProvider.class
-com/example/rmitify/service/ICourseService.class
-com/example/rmitify/service/CourseService.class
-com/example/rmitify/service/IUserService.class
 com/example/rmitify/controller/UserController.class
