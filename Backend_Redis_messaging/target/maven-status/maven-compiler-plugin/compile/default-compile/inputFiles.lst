@@ -1,0 +1,6 @@
+/Users/nguyenkhangduy/Downloads/SpringbootRedisUsingJedis/src/main/java/org/jcg/springboot/redis/SpringbootRedis.java
+/Users/nguyenkhangduy/Downloads/SpringbootRedisUsingJedis/src/main/java/org/jcg/springboot/redis/config/RedisConfig.java
+/Users/nguyenkhangduy/Downloads/SpringbootRedisUsingJedis/src/main/java/org/jcg/springboot/redis/model/Employee.java
+/Users/nguyenkhangduy/Downloads/SpringbootRedisUsingJedis/src/main/java/org/jcg/springboot/redis/dao/Employeerepo.java
+/Users/nguyenkhangduy/Downloads/SpringbootRedisUsingJedis/src/main/java/org/jcg/springboot/redis/service/EmployeeService.java
+/Users/nguyenkhangduy/Downloads/SpringbootRedisUsingJedis/src/main/java/org/jcg/springboot/redis/controller/EmployeeController.java
