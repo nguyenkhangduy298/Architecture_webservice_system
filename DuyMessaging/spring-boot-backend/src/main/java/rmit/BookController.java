@@ -1,4 +1,4 @@
-package pl.codeleak.samples.springboot.tc;
+package rmit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -6,22 +6,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/owners")
+@RequestMapping(path = "/books")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class OwnerController {
+public class BookController {
 
         @Autowired
-        private OwnerRepository repository;
+        private BookRepository repository;
 
         @RequestMapping(path = "", method = RequestMethod.GET)
-        public List<Owner> getAllOwners() {
+        public List<Book> getAllBooks() {
             return repository.findAll();
         }
 
         @RequestMapping(path = "", method = RequestMethod.POST)
-        public Owner addOwner(@RequestBody Owner owner) {
-                repository.save(owner);
-                return owner;
+        public Book addBooks(@RequestBody Book book) {
+                repository.save(book);
+                return book;
         }
 
 

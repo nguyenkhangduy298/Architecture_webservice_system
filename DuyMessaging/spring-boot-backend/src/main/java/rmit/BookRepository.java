@@ -1,15 +1,11 @@
-package pl.codeleak.samples.springboot.tc;
+package rmit;
 
-import org.hibernate.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
-import java.util.List;
-
 @RestResource
 @Repository
-public interface OwnerRepository extends JpaRepository<Owner, Long> {
+public interface BookRepository extends JpaRepository<Book, Long> {
 
 }
