@@ -9,11 +9,7 @@ import DataLoaderSpring from "./DataLoaderSpring";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-          <h1>My Chat App</h1>
-      </header>
+    <div>
       <main>
           <DataLoaderSpring/>
           {/*<DataLoader/><PostRequest/><PutRequest/><DataLoaderSearch/>*/}
