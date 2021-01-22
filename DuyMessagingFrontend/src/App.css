@@ -222,6 +222,6 @@ input {
   font-family: "Poppins", sans-serif !important;
   font-weight: 600 !important;
   width: 200px !important;
-  background-image: linear-gradient(to right, #00c6ff , #0072ff) !important;
+  background-image: linear-gradient(to left, #00c6ff , #0072ff) !important;
 }
 
