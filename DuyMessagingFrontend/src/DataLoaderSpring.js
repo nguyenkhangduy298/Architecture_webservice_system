@@ -21,12 +21,14 @@ export default function DataLoader() {
             </div>
         </div>
     ));
-    const endPoint = "http://localhost:9000/owners"
+    const endPoint = "http://localhost:10091/api/redis/employee/getall"
 
     const save = (message) => {
         message = message.toLowerCase()
         if (message.includes("book")) {
-            fetch(endPoint)
+            fetch(endPoint, {
+                crossDomain:true
+            })
                 .then(response => response.json())
                 .then(data => setData(data));
             setRes(2)
@@ -48,7 +50,7 @@ export default function DataLoader() {
                 {data.map(el => (
                     // <li key={el.id}>{el.name}&nbsp;&nbsp;&nbsp;&nbsp;{el.grade}&nbsp;&nbsp;&nbsp;&nbsp;{el.parentName}
                     //     &nbsp;&nbsp;&nbsp;&nbsp;{el.address}&nbsp;&nbsp;&nbsp;&nbsp;{el.phone}&nbsp;&nbsp;&nbsp;&nbsp;{el.email}</li>
-                    <li key={el.id}>{el.firstName}&nbsp;&nbsp;&nbsp;&nbsp;{el.lastName}</li>
+                    <li key={el.id}>{el.name}&nbsp;{el.salary}&nbsp;&nbsp;&nbsp;{el.age}</li>
                 ))}
             </ol>
 

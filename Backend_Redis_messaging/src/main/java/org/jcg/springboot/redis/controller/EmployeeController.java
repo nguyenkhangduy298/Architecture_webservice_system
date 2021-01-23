@@ -1,5 +1,7 @@
 package org.jcg.springboot.redis.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.jcg.springboot.redis.model.Employee;
@@ -7,18 +9,13 @@ import org.jcg.springboot.redis.service.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 // In this class, we have left the caching approach for tutorial simplicity.
 // If users which they can enabling caching in this application.
 @RestController
 @RequestMapping(value = "/api/redis/employee")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class EmployeeController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(EmployeeController.class);
@@ -38,11 +35,12 @@ public class EmployeeController {
 	// Get all employees.
 	// Url - http://localhost:10091/api/redis/employee/getall
 	@GetMapping("/getall")
-	public Map<String, Employee> findAll() {
+	public List<Employee> findAll() {
 		LOG.info("Fetching all employees from the redis.");
 		final Map<String, Employee> employeeMap = service.findAll();
 		// Todo - If developers like they can sort the map (optional).
-		return employeeMap;
+		List<Employee> employeeList = new ArrayList<Employee>(employeeMap.values());
+		return employeeList;
 	}
 
 	// Get employee by id.
@@ -56,11 +54,16 @@ public class EmployeeController {
 	// Delete employee by id.
 	// Url - http://localhost:10091/api/redis/employee/delete/<employee_id>
 	@DeleteMapping("/delete/{id}")
-	public Map<String, Employee> delete(@PathVariable("id") final String id) {
+	public List<Employee> delete(@PathVariable("id") final String id) {
 		LOG.info("Deleting employee with id= " + id);
 		// Deleting the employee.
 		service.delete(id);
 		// Returning the all employees (post the deleted one).
 		return findAll();
+	}
+
+	@GetMapping("/test")
+	public String test() {
+		return "testingggg";
 	}
 }
