@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+
+.ant-layout-sider, .menu-header {
+    background-color: white !important;
+}
+
+.main-layout {
+    margin-left: 10px;
+   
+}
+
+.bot-panel{
+    position: relative;
+    top: 30px;
+    text-align: center;
+    margin: auto;
+    width: 98%;
+    border-radius: 4px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 24px;
+    
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  
+  .chatbot-panel {
+    position:relative;
+    bottom: 50px;
+    padding-bottom: 20px !important;
+   
+  }
+  
+  .welcome-panel {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-panel .image-panel {
+    flex: 1;
+  }
+  
+  .welcome-panel .image-panel img {
+    height: 400px;
+    max-width: 100%;
+  }
+  
+  .welcome-panel .text-panel {
+    flex: 1;
+    text-align: left;
+    position: relative;
+    right: 100px;
+    top: 50px;
+  }
+  
+  .welcome-panel .text-panel h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: 80px;
+    color: #1FA2FF;
+  }
+  
+  .welcome-panel .text-panel p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    color: #000;
+    line-height: 35px;
+  }
+  
+  
+  .input-field{
+    width: 90%;
+    padding: 5px;
+    margin: 2px;
+    font-size: 110%;
+  }
+  
+  input {
+    width: 90%;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid orangered;
+    flex-grow: 1;
+  }
+  .button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10px;
+  }
+  
+ 
+  .chatbot-main-div {
+    background-color: white;
+  }
+
+  .chatbot {
+    width: 500px;
+  }
+  .chatbot-div {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  
+  .chatbot-hero-text {
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+  .return-btn {
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #19b5fe;
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
+    width: 200px;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: 0.5s;
+    background-size: 200% auto;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+
+
+  }
+  .chatbot-btn {
+    border-radius: 5px;
+    border: 1px solid #19b5fe;
+    background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    color: white;
+    width: 500px;
+    height: 100px;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: 0.5s;
+    background-size: 200% auto;
+
+  }
+  
+  .chatbot-btn:hover, .return-btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
+  
+  @keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+   }
+  }
+  
+  .react-chatbot-kit-chat-container {
+    margin: auto !important;
+    width: 80% !important;
+    position: static !important;
+  
+  
+  }
+  .react-chatbot-kit-chat-inner-container {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  
+  .react-chatbot-kit-chat-input-container {
+    position: relative !important;
+  }
+  
+  .react-chatbot-kit-chat-input {
+    
+  }
+  
+  .react-chatbot-kit-chat-header {
+    background-color: #1FA2FF !important;
+    color: #fff !important;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 800 !important;
+  
+  }
+  
+  .react-chatbot-kit-chat-message-container {
+   
+  }
+  
+  .react-chatbot-kit-chat-input-container {
+    
+  }
+  
+  .react-chatbot-kit-chat-bot-avatar-letter {
+    margin-bottom: 0rem !important;
+  }
+
+  
+  .react-chatbot-kit-chat-bot-message {
+    /* margin-left: 0px !important; */
+    margin-right: 75%;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 600 !important;
+    width: 200px !important;
+    background-image: linear-gradient(to left, #00c6ff , #0072ff) !important;
+  }
+  

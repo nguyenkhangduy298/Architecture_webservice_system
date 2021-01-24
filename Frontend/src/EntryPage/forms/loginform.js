@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import _default from 'antd/lib/checkbox/Group';
 
 
 var bcrypt = require('bcryptjs');
@@ -9,20 +10,34 @@ var bcrypt = require('bcryptjs');
 export default function LoginForm() {
     const { register, handleSubmit, errors } = useForm();
     const userEndPoint = 'http://localhost:8080/user';
+    const courseEndPoint = 'http://localhost:8080/course';
     const history = useHistory();
 
+    const getAvailableCourses = () => {
+        fetch(courseEndPoint)
+            .then(response => response.json())
+            .then(courseList => {
+                if (courseList.length > 0) {
+                    console.log(courseList);
+                    localStorage.setItem("courses", JSON.stringify(courseList));
+                } else {
+                    localStorage.setItem("courses", []);
+                }
+            })
+    }
     const checkValidUser = (email, password ) => {
         fetch(userEndPoint + "/email/" + email)
             .then(response => response.json())
             .then(data => {
                 
-                // if ((email === data.email) && (password === data.password)) {
                 if ((email === data.email) && (bcrypt.compareSync(password, data.password))) {
                     localStorage.setItem("isLoggedIn", "true");
                     localStorage.setItem("userEmail", email);
+                    localStorage.setItem("userRole", data.role);
+                    getAvailableCourses();
+                    
                     history.push({
-                        pathname: "/homepage",
-                        state: { email: email}
+                        pathname: "/homepage"
                     });
                    
                 } else {

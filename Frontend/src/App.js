@@ -6,6 +6,8 @@ import { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './HomePage/home.js'
 import NotFound from './Common/notfound.js'
+import Dashboard from './HomePage/dashboard.js'
+import Chatbot from './HomePage/chatbot.js'
 
 export default class App extends Component {
   render() {
@@ -17,6 +19,7 @@ export default class App extends Component {
             <Route path="/login" exact component={Login} />
             <Route path="/signup" exact component= {Signup} />
             <Route path="/forgotpassword" exact component={ForgotPassword} />
+            <Route path="/chatbot" exact component={Chatbot} />
             <Route component={NotFound} />
           </Switch>
         </BrowserRouter>

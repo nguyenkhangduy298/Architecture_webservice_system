@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 if (localStorage.getItem('isLoggedIn') == null) {
   localStorage.setItem('isLoggedIn', 'false');
   localStorage.setItem('userEmail', '');
+  localStorage.setItem('userRole', '');
+  localStorage.setItem('courses', null);
 }
 
 // localStorage.clear()
