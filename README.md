@@ -55,6 +55,11 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 - if you do not have account you need to register 
 <img src ="register.png" > <img src = "succeess.png">
 
-
+## JMeter Load Testing ##
+Jmeter Load Testing with 1000 concurrent requests
+<img src ="jmeter.png" > 
+<img src = "jmeter2.png">
+<img src = "jmeter3.png">
+The result file is generated in Result_redis_jmeter.csv file
 
 <a href="#top">Back to top</a>
