@@ -45,8 +45,16 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 ## Build instruction to run the project on local host ##
 
 - Install Backend and Frontend dependencies.
-- Start the backend server with folder back end and run mvn spring-boost run
+- Start two file in backend including MessagingBackendPostgre and MessagingBackendRedis by docker compose or spring boots 
 - Start the frontend server in the frontend folder - npm start
+
+## The UI show ##
+
+- In the first page will show the login page 
+<img src="login.png">
+- if you do not have account you need to register 
+<img src ="register.png" > <img src = "succeess.png">
+
 
 
 <a href="#top">Back to top</a>
