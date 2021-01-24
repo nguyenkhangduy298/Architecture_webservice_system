@@ -1,42 +1,28 @@
-package rmit.model;
+package org.jcg.springboot.redis.model;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "books")
-public class Book {
+import org.springframework.stereotype.Component;
 
-    @Id
-    @GeneratedValue
+@Component
+public class Book implements  Serializable{
+
+    private static final long serialVersionUID = 1L;
+
     Long id;
-
-    @Column
     Long isbn;
-
-    @Column
     String title;
-
-    @Column
     String field;
-
-    @Column
     String author;
-
-    @Column
     String publish;
-
-    @Column
     String description;
-
-    @Column
-    String url;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getIsbn() {
@@ -85,13 +71,5 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 }

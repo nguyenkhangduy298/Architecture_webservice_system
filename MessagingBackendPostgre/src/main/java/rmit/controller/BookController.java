@@ -5,6 +5,7 @@ import rmit.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import rmit.repository.BookRepository;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +16,7 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
-    @RequestMapping(path = "/book", method = RequestMethod.GET)
+    @RequestMapping(path = "/books", method = RequestMethod.GET)
     public List<Book> getAllBooks() {
         return (List<Book>) bookRepository.findAll();
     }
@@ -24,6 +25,13 @@ public class BookController {
     public Book addBooks(@RequestBody Book book) {
         bookRepository.save(book);
         return book;
+    }
+
+    @RequestMapping(path = "/books", method = RequestMethod.POST)
+    public List<Book> addAllBooks(@RequestBody List<Book> books) {
+        bookRepository.saveAll(books);
+
+        return books;
     }
 
     @RequestMapping(path = "/book/{id}", method = RequestMethod.GET)
@@ -48,5 +56,17 @@ public class BookController {
         if (!book1.isPresent()) return null;
 
         return bookRepository.save(book);
+    }
+
+    @RequestMapping(path = "book/title/{title}", method = RequestMethod.GET)
+    public List<Book> getAllBooksByTitle(@PathVariable String title) {
+        List<Book> books = bookRepository.findAllBooksByTitle(title);
+
+        System.out.println(title);
+        System.out.println(books);
+
+        if(books.isEmpty()) return null;
+
+        return books;
     }
 }
