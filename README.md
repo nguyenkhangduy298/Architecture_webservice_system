@@ -88,12 +88,17 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 ** Note **: In case you test Redis API with Postman and it returns error. Please run "MessagingBackendRedis" manually with Spring Boot
 
 
+
 ## The UI show ##
 
 - In the first page will show the login page 
 <img src="login.png">
 - if you do not have account you need to register 
 <img src ="register.png" > <img src = "succeess.png">
+
+## Main Feature ##
+Type anything with "Book" in the chatbot, the system will load from database and post to redis
+<img src ="slowload.png" > <img src = "slowload2.png">
 
 ## JMeter Load Testing ##
 Jmeter Load Testing with 1000 concurrent requests
