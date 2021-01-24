@@ -16,7 +16,7 @@ import java.util.Map;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BookController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(EmployeeController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BookController.class);
 
     @Autowired
     BookService service;

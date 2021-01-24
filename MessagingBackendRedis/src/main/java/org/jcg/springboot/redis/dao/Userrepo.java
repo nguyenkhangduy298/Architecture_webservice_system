@@ -7,9 +7,9 @@ import java.util.Map;
 public interface Userrepo {
     void save(User employee);
 
-    User findById(String id);
+    User findById(Long id);
 
-    Map<String, User> findAll();
+    Map<Long, User> findAll();
 
-    void delete(String id);
+    void delete(Long id);
 }

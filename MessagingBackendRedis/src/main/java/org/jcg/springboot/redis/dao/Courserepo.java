@@ -7,9 +7,9 @@ import java.util.Map;
 public interface Courserepo {
     void save(Course employee);
 
-    Course findById(String id);
+    Course findById(Long id);
 
-    Map<String, Course> findAll();
+    Map<Long, Course> findAll();
 
-    void delete(String id);
+    void delete(Long id);
 }
