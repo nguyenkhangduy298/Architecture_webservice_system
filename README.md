@@ -98,9 +98,13 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ## Build instruction to run the project on local host ##
 
-- Install Backend and Frontend dependencies.
-- Start two file in backend including MessagingBackendPostgre and MessagingBackendRedis by docker compose or spring boots 
-- Start the frontend server in the frontend folder - npm start
+- Install Backend and Frontend dependencies.- Install Backend and Frontend dependencies.
+- Do command "mvn clean install" for "MessagingBackendPostgre" and "MessagingBackendRedis"
+- Do command "docker-compose & docker-compose up" for main project "Architecture_webservice_system". This will run the whole project.
+- Now you can access to localhost:3000 to experience the web application.
+
+** Note **: In case you test Redis API with Postman and it returns error. Please run "MessagingBackendRedis" manually with Spring Boot
+
 
 ## The UI show ##
 
