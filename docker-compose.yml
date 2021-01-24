@@ -34,11 +34,13 @@ services:
   appredis:
     build: ./MessagingBackendRedis
     ports:
-      - "9000:10091"
+      - "10091:10091"
     depends_on:
       - redis
       - db
+    links:
+      - redis
   frontend:
-    build: ./MessagingFrontend
+    build: ./Frontend
     ports:
     - "3000:3000"
