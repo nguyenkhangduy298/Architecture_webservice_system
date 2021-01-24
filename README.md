@@ -58,7 +58,6 @@ $ python3 userGenerator.py --post 100
 This python code will help generate numbers of dummies data for testing
 
 ### Python Prerequisite ###
-
 ```bash
 $ python3 -m pip install json
 $ python3 -m pip install requests
@@ -77,6 +76,8 @@ $ python3 bookGenerator.py --post run
 # Which --post 'number of user'
 $ python3 userGenerator.py --post 100
 ```
+
+## AWS Deployment ##
 
 
 ## :rocket: Technologies ##
