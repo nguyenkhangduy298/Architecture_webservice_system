@@ -63,6 +63,7 @@ $ python3 userGenerator.py --post 100
 ## API tester ##
 * In the folder, there is *architect_rmit.postman_collection.json* file
 * How to test API:
+    * Run MessagingBackendRedis for service
     * Go to Postman
     * Import the *architect_rmit.postman_collection.json* file
     * Run through all APIs
@@ -74,10 +75,10 @@ The following tools were used in this project:
 
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Aws]()
-- [Sringboots]()
-- [Redis]()
-- [Postgre]()
+- [Aws](Deployment into the system with personal public IP + pem.file using ubuntu, zip file and scp into aws for deployment)
+- [Sringboots](MVC)
+- [Redis](Cache Lazy Loading- NoSQL)
+- [Postgre](SQL)
 
 
 ## :white_check_mark: Requirements ##
@@ -89,6 +90,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 - Install Backend and Frontend dependencies.- Install Backend and Frontend dependencies.
 - Do command "mvn clean install" for "MessagingBackendPostgre" and "MessagingBackendRedis"
 - Do command "docker-compose & docker-compose up" for main project "Architecture_webservice_system". This will run the whole project.
+- Do run "SpringBootApplication" for "MessagingBackendPostgre"
 - Now you can access to localhost:3000 to experience the web application.
 
 ** Note **: In case you test Redis API with Postman and it returns error. Please run "MessagingBackendRedis" manually with Spring Boot
@@ -104,7 +106,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ## Main Feature ##
 Type anything with "Book" in the chatbot, the system will load from database and post to redis
-<img src ="slowload.png" > <img src = "slowload2.png">
+<img src ="slowload2.png" > <img src = "slowload.png">
 
 ## JMeter Load Testing ##
 Jmeter Load Testing with 1000 concurrent requests
