@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Architecture_webservice_system.iml" filepath="$PROJECT_DIR$/.idea/Architecture_webservice_system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessagingBackendRedis/SpringbootRedisUsingJedis.iml" filepath="$PROJECT_DIR$/MessagingBackendRedis/SpringbootRedisUsingJedis.iml" />
     </modules>
   </component>
 </project>

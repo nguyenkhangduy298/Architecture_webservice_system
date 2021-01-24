@@ -1,6 +1,10 @@
 /Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/model/User.java
 /Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/dao/Courserepo.java
+/Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/controller/CourseController.java
+/Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/controller/UserController.java
 /Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/service/BookService.java
+/Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/service/UserService.java
+/Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/service/CourseService.java
 /Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/controller/BookController.java
 /Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/model/Book.java
 /Users/nguyenkhangduy/Desktop/Architecture and Design/Git Final Project/Architecture_webservice_system/MessagingBackendRedis/src/main/java/org/jcg/springboot/redis/service/EmployeeService.java

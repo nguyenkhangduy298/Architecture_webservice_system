@@ -1,12 +1,16 @@
 org/jcg/springboot/redis/dao/Courserepo.class
+org/jcg/springboot/redis/service/UserService.class
 org/jcg/springboot/redis/config/RedisConfig.class
 org/jcg/springboot/redis/model/Course.class
+org/jcg/springboot/redis/service/CourseService.class
 org/jcg/springboot/redis/model/Book.class
 org/jcg/springboot/redis/dao/Bookrepo.class
 org/jcg/springboot/redis/dao/Employeerepo.class
 org/jcg/springboot/redis/controller/BookController.class
 org/jcg/springboot/redis/controller/EmployeeController.class
+org/jcg/springboot/redis/controller/UserController.class
 org/jcg/springboot/redis/model/Employee.class
+org/jcg/springboot/redis/controller/CourseController.class
 org/jcg/springboot/redis/model/User.class
 org/jcg/springboot/redis/service/EmployeeService.class
 org/jcg/springboot/redis/SpringbootRedis.class
