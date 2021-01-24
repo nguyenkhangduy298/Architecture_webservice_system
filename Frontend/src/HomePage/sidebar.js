@@ -4,23 +4,25 @@ import { Route , withRouter} from 'react-router-dom';
 import canvasImage from "./img/canvasLogo_light.jpg";
 import './static/style.css';
 import 'antd/dist/antd.css';
-import { Layout, Menu, Drawer, Button, Col, Row, Switch, Divider } from "antd";
+import { Layout, Menu, Drawer, Button, Col, Row, Switch, Divider, Modal } from "antd";
 import { BookOutlined, DashboardOutlined, UserOutlined, RobotOutlined} from '@ant-design/icons';
+import AddCourseForm from './forms/addcourseform.js'
+
+
+
 
 class SideBar extends Component {
     constructor(props) {
         super(props);
         this.handleLogout = this.handleLogout.bind(this);
-        // this.showAccountDrawer = this.showAccountDrawer.bind(this);
-        // this.showCoursesDrawer = this.showCoursesDrawer.bind(this);
-        // this.onClose = this.onClose.bind(this);
-        
+      
         this.state = {
             accountDrawerVisible: false, 
             coursesDrawerVisible: false,
             courses: null,
             userEmail: localStorage.getItem("userEmail"),
-            userRole: localStorage.getItem("userRole")
+            userRole: localStorage.getItem("userRole"),
+            modalVisible: false
         };
     }
 
@@ -52,6 +54,14 @@ class SideBar extends Component {
         coursesDrawerVisible: false
     });
   };
+
+  openModal = () => {
+    this.setState({modalVisible: true});
+  }
+
+  closeModal = () => {
+    this.setState({modalVisible: false});
+  }
 
   handleLogout() {
     localStorage.setItem("isLoggedIn", "false");
@@ -97,26 +107,15 @@ class SideBar extends Component {
       );
     }
 
-    // // Checking the persona and displaying either Create a course or Enroll into a Course
-    // let enrolOrCreate = null;
-    // if (localStorage.getItem("userRole") === 'student') {
-    //   enrolOrCreate = (
-    //     <Link to="/create" style={{ textDecoration: "underline" }} onClick={this.onClose}>
-    //       {/**FIXME Make routes under the courses page
-    //   NOTE This Link tag is not of html and is the link of react-router-dom. The latter link can be used for routing */}
-    //       <font size="4">Create a Course</font>
-    //     </Link>
-    //   );
-    // } else if (localStorage.getItem("userRole") === 'teacher') {
-    //   // FIXME Configure app so as to enroll course on url /courses/enroll and create courses on /courses/create
-    //   enrolOrCreate = (
-    //     <Link to="/enroll" style={{ textDecoration: "underline" }} onClick={this.onClose}>
-    //       {/**FIXME Make routes under the courses page
-    //   NOTE This Link tag is not of html and is the link of react-router-dom. The latter link can be used for routing */}
-    //       <font size="4">Enroll into a Course</font>
-    //     </Link>
-    //   );
-    // }
+ 
+   
+    let createCourse = (
+      <Link to="#" style={{ textDecoration: "underline" }} onClick={this.openModal}>
+  
+        <font size="4">Add Course</font>
+      </Link>
+    );
+    
 
     const { Header, Content, Footer, Sider } = Layout;
     return (
@@ -209,9 +208,31 @@ class SideBar extends Component {
             visible={this.state.coursesDrawerVisible}
           >
             {coursesPresent}
-           
+            <div
+              style={{
+                position: "absolute",
+                left: 0,
+                bottom: 0,
+                width: "100%",
+                borderTop: "1px solid #e9e9e9",
+                padding: "10px 16px",
+                background: "#fff",
+                textAlign: "center"
+              }}
+            >
+              {createCourse}
+            </div>
           </Drawer>
         </Layout>
+        <Modal
+          title="Add New Course"
+          centered
+          visible={this.state.modalVisible}
+          onCancel={this.closeModal}
+          okButtonProps={{style: {display: 'none'}}}
+        >
+          <AddCourseForm />
+        </Modal>
       </div>
     );
   }
