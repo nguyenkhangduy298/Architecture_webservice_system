@@ -6,7 +6,7 @@
   <!-- <a href="https://architecture_webservice_system.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Architecture_webservice_system</h1>
+<h1 align="center">Learning Management Platform (Prototype of Canvas by Instructure) </h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/architecture_webservice_system?color=56BEB8">
@@ -44,15 +44,28 @@
 
 <br>
 
+
+
+
+
 ## :dart: About ##
 
-Describe your project
+The application is an end-to-end prototype of the Canvas platform, a Learning Management System created by Instructure (https://www.instructure.com/canvas). It supports majority of functionalities presented by the actual website such as registration by a student or a faculty, creation of courses by a faculty, enrolling into courses by a student, adding assignments/quizzes, taking quizzes, grading, P2P messaging, pdf document view, real-time notifications, and so on. The application is developed majorly using the MERN stack technologies ( ReactJS, Spring Boot , Docker, Redis) and is made highly scalable and available using the 3-tier distributed system paradigm with fault tolerance and load balancing using the AWS EC2  with real-time data pipelining. The Backend is a RESTful service that handles all the requests from the client.
+
 
 ## :sparkles: Features ##
 
 :heavy_check_mark: Feature 1;\
 :heavy_check_mark: Feature 2;\
 :heavy_check_mark: Feature 3;
+
+
+## System Architecture ##
+
+
+## Class Diagram ##
+<img src = "classDiagram.png">
+
 
 ## :rocket: Technologies ##
 
@@ -64,35 +77,15 @@ The following tools were used in this project:
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 
+
+
 ## :white_check_mark: Requirements ##
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
-## :checkered_flag: Starting ##
-
-```bash
-# Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/architecture_webservice_system
-
-# Access
-$ cd architecture_webservice_system
-
-# Install dependencies
-$ yarn
-
-# Run the project
-$ yarn start
-
-# The server will initialize in the <http://localhost:3000>
-```
-
-## :memo: License ##
-
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+## Build instruction to run the project on local host ##
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
 
-&#xa0;
 
 <a href="#top">Back to top</a>
