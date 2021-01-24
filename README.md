@@ -61,7 +61,8 @@ The application is an end-to-end prototype of the Canvas platform, a Learning Ma
 
 
 ## System Architecture ##
-
+<img src ="architecture1.png">
+<img src = "detailArchitecture.png">
 
 ## Class Diagram ##
 <img src = "classDiagram.png">
