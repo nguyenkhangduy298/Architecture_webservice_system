@@ -107,8 +107,13 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 ## Main Feature ##
 Type anything with "Book" in the chatbot, the system will load from database and post to redis. For other cases, the chatbot will have its own resolving cases.
 <img src ="chatbot.png" > <img src = "chatbot2.png">
-THE AUTO GENERATING BOOK DATABASE IS USED WITH MORE THAN 1000 DATA, THE CHATBOT LOADING WILL BE SLOW BUT THE PROCESS WILL EVENTUALLY SHOW ALL QUERY RESULTS
+For Custom Request: Type anything with "Book"+"Sabriya"(Chatbot with NLP can be extends to understand more query) in the chatbot, the system will load from database Book with Specific Title and post to redis
+<img src ="chatbotcustom.png" >
+**Note** THE AUTO GENERATING BOOK DATABASE IS USED WITH MORE THAN 1000 DATA, THE CHATBOT LOADING WILL BE SLOW BUT THE PROCESS WILL EVENTUALLY SHOW ALL QUERY RESULTS
 <img src ="slowload2.png" > <img src = "slowload.png">
+
+The Course Implementation Feature to query from Database
+ <img src = "course.png">  <img src = "course2.png">
 
 ## JMeter Load Testing ##
 Jmeter Load Testing with 1000 concurrent requests
