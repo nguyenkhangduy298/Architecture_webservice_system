@@ -36,7 +36,7 @@ public class BookController {
         return bookList;
     }
 
-    @GetMapping("get/{id}")
+    @GetMapping("/get/{id}")
     public Book findById(@PathVariable("id") final Long id) {
         LOG.info("Fetching book with id= " + id);
         return service.findById(id);
