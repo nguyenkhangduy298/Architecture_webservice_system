@@ -60,7 +60,6 @@ public class BookController {
 
     @RequestMapping(path = "book/title/{title}", method = RequestMethod.GET)
     public List<Book> getAllBooksByTitle(@PathVariable String title) {
-        title = "%"+title+"%";
         List<Book> books = bookRepository.getAllBooksByTitle(title);
 
         if(books.isEmpty()) return null;

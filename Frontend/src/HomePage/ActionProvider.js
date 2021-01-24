@@ -19,7 +19,8 @@ class ActionProvider{
         // const [resBook, setResBook] = useState(0)
         console.log(message);
         const endPoint = "http://localhost:8080/books";
-        const endPoint2 = "http://localhost:8080/book/name?name=Sabriya"
+        // const endPoint2 = "http://localhost:8080/book/name?name=Sabriya"
+        const endPoint2 = "http://localhost:8080/book/title/Sabriya"
         // const redis = "http://localhost:10091/api/redis/employee"
         const redis = "http://localhost:10091/redis/book"
 
