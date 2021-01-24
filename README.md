@@ -24,6 +24,34 @@ The application is an end-to-end prototype of the Canvas platform, a Learning Ma
 ## Class Diagram ##
 <img src = "classDiagram.png">
 
+:snake: ## Python Intepreter - User/Book Generator ##
+This python code will help generate numbers of dummies data for testing
+Located in *RandomGenerator* folder
+
+# Python Prerequisite #
+Run these command inside RandomGenerator folder
+```bash
+$ python3 -m pip install json
+$ python3 -m pip install requests
+
+```
+# Random user API link #
+* Random user: https://randomuser.me/api/
+* Random books: https://api.airtable.com/v0/appybL1OJaEEIvAdS/Books?api_key=keymAugpaEvXsyGBr
+
+# How to run #
+```bash
+# Run random book generator
+# --get 1 means get 100 records in the randomuser.me
+$ python3 bookGenerator.py --get 1
+
+# Post it to localhost:8080/book
+$ python3 bookGenerator.py --post run
+
+# Post number of users onto localhost:8080/user
+# Which --post 'number of user'
+$ python3 userGenerator.py --post 100
+```
 
 ## :rocket: Technologies ##
 
@@ -31,7 +59,7 @@ The following tools were used in this project:
 
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [aws]()
+- [Aws]()
 - [Sringboots]()
 - [Redis]()
 - [Postgre]()
