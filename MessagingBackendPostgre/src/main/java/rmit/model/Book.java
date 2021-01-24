@@ -28,6 +28,9 @@ public class Book {
     @Column
     String description;
 
+    @Column
+    String url;
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -82,5 +85,13 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
