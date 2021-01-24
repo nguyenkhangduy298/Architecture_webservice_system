@@ -19,8 +19,7 @@ class ActionProvider{
         // const [resBook, setResBook] = useState(0)
         console.log(message);
         const endPoint = "http://localhost:8080/books";
-        // const endPoint = "http://localhost:8080/book";
-        const endPoint2 = "http://localhost:8080/course/name?name=Machine%20Learning"
+        const endPoint2 = "http://localhost:8080/book/name?name=Sabriya"
         // const redis = "http://localhost:10091/api/redis/employee"
         const redis = "http://localhost:10091/redis/book"
 
@@ -31,7 +30,7 @@ class ActionProvider{
         var counter = 0
 
         if (message.includes("book")) {
-            if (message.includes("machine learning")){
+            if (message.includes("sabriya")){
                 console.log("Custom Request")
                 fetch(endPoint2)
                     .then(response => response.json())
@@ -44,14 +43,27 @@ class ActionProvider{
 
                         for (var i = 0; i < responseLength; i++) {
                             var bookNumber = i + 1;
-                            var bookData = bookNumber + ". " + dataList[i]["name"] + ". " + dataList[i]["field"] + ". " + dataList[i]["courseCode"];
+                            var bookData = bookNumber + ". " + dataList[i]["title"] + ". " + dataList[i]["author"] + ". " + dataList[i]["url"];
+                            // var bookData = bookNumber + ". " + dataList[i]["name"] + ". " + dataList[i]["field"] + ". " + dataList[i]["courseCode"];
+                            // var bookData = bookNumber + ". " + dataList[i]["name"] + ". " + dataList[i]["age"] + ". " + dataList[i]["salary"];
+
                             const dataResponse = this.createChatBotMessage(bookData);
                             this.updateChatbotState(dataResponse);
+                            console.log("Update Redis")
+                            fetch(redis, {
+                                crossDomain: true,
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({id: i,isbn: dataList[i]["isbn"] ,title: dataList[i]["title"],author: dataList[i]["author"], description: dataList[i]["url"]})
+                            })
                         }
+
                     })
                     .catch(errors => {
                         console.log(errors)
-                    });
+                    })
             }
             else {
                 console.log("else")
